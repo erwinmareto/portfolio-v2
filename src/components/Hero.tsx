@@ -1,14 +1,14 @@
 type Props = {};
 const Hero = (props: Props) => {
   return (
-    <section className="w-full flex flex-col items-center gap-5">
+    <section className="w-full flex flex-col items-center gap-5 overflow-x-hidden">
       <div className="pt-10">
         <div className="flex flex-col">
           <h1 className="text-6xl text-center md:text-8xl">I&apos;m Erwin</h1>
           <h1 className="text-6xl text-center md:text-8xl">a Web Developer.</h1>
         </div>
 
-        <p className="text-center p-10 md:text-xl">
+        <p className="text-center my-5 p-5 text-xl lg:px-64">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
           consectetur pariatur possimus, vero voluptatum quo saepe magnam, quia
           beatae at quaerat officiis tenetur blanditiis. Provident explicabo id
@@ -16,6 +16,7 @@ const Hero = (props: Props) => {
         </p>
       </div>
       <svg
+        height={271}
         viewBox="0 0 1440 271"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

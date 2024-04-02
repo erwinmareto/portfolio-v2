@@ -5,79 +5,88 @@ import TextPlugin from "gsap/TextPlugin";
 import MotionPathPlugin from "gsap/MotionPathPlugin";
 
 const Hero = () => {
-  useGSAP(() => {
-    const tl = gsap.timeline();
-    // tl.from("path", {
-    //   duration: 1,
-    //   yPercent: 100,
-    //   stagger: 0.4,
-    //   repeat: -1,
-    //   yoyo: true,
-    // });
+  useGSAP(
+    () => {
+      const tl = gsap.timeline();
+      // tl.from("path", {
+      //   duration: 1,
+      //   yPercent: 100,
+      //   stagger: 0.5,
+      //   repeat: -1,
+      //   yoyo: true,
+      // });
 
-    gsap.to("h1", {
-      duration: 1,
-      ease: "power4.out",
-      stagger: 0.1,
-      y: 0,
-      opacity: 1,
-    });
+      gsap.to("h1", {
+        duration: 1,
+        ease: "power4.out",
+        stagger: 0.5,
+        y: 0,
+        opacity: 1,
+      });
 
-    gsap.to("p", {
-      duration: 2,
-      ease: "power4.out",
-      y: 0,
-      opacity: 1,
-    });
+      gsap.to("p", {
+        duration: 2,
+        ease: "power4.out",
+        y: 0,
+        opacity: 1,
+      });
 
-    gsap.registerPlugin(MotionPathPlugin);
+      gsap.registerPlugin(MotionPathPlugin);
 
-    gsap.to("#text1", {
-      duration: 5,
-      // repeat: -1,
-      // repeatDelay: 1,
-      // yoyo: true,
-      ease: "power1.out",
-      motionPath: {
-        path: "#wave1",
-        align: "#wave1",
-        autoRotate: true,
-        alignOrigin: [0.8, 0.8],
-        end: gsap.utils.random(0.1, 0.4),
-      },
-    });
-    gsap.to("#text2", {
-      duration: 3,
-      // repeat: -1,
-      // repeatDelay: 1,
-      // yoyo: true,
-      ease: "power1.out",
-      motionPath: {
-        path: "#wave2",
-        align: "#wave2",
-        autoRotate: true,
-        alignOrigin: [0.8, 0.8],
-        end: gsap.utils.random(0.1, 0.4),
-      },
-    });
+      gsap.to("#text1", {
+        duration: gsap.utils.random(3, 5),
+        repeat: -1,
+        repeatDelay: gsap.utils.random(1, 3),
+        // repeatDelay: 1,
+        // yoyo: true,
+        ease: "power1.out",
+        motionPath: {
+          path: "#wave1",
+          align: "#wave1",
+          autoRotate: true,
+          alignOrigin: [1, 0],
+          end: 0.5,
+        },
+      });
+      gsap.to("#text2", {
+        duration: gsap.utils.random(3, 5),
+        repeat: -1,
+        repeatDelay: gsap.utils.random(1, 3),
+        // repeatDelay: 1,
+        // yoyo: true,
+        ease: "power1.out",
+        motionPath: {
+          path: "#wave2",
+          align: "#wave2",
+          autoRotate: true,
+          alignOrigin: [0.9, 0.9],
+          end: 0.5,
+        },
+      });
 
-    gsap.to("#text3", {
-      duration: 2,
-      // repeat: -1,
-      // repeatDelay: 1,
-      // yoyo: true,
-      ease: "power1.out",
-      motionPath: {
-        path: "#wave3",
-        align: "#wave3",
-        autoRotate: true,
-        alignOrigin: [0.8, 0.8],
-        end: gsap.utils.random(0.1, 0.4),
-      },
-    });
-  });
+      gsap.to("#text3", {
+        duration: gsap.utils.random(3, 5),
+        repeat: -1,
+        repeatDelay: gsap.utils.random(1, 3),
+        // repeatDelay: 1,
+        // yoyo: true,
+        ease: "power1.out",
+        motionPath: {
+          path: "#wave3",
+          align: "#wave3",
+          autoRotate: true,
+          alignOrigin: [0.9, 0.9],
+          end: 0.5,
+        },
+      });
+    },
+    { scope: "#hero" }
+  );
   return (
-    <section className="w-full flex flex-col items-center overflow-hidden">
+    <section
+      id="hero"
+      className="w-full flex flex-col items-center overflow-hidden"
+    >
       <div className="pt-10">
         <div className="flex flex-col items-center">
           <h1 className="text-6xl text-center translate-y-full opacity-0 md:text-8xl">
@@ -96,13 +105,13 @@ const Hero = () => {
           illum corporis cumque?
         </p>
       </div>
-      <p id="text1" className="absolute text-4xl">
+      <p id="text1" className="w-1 h-1 text-4xl">
         HIIIII
       </p>
-      <p id="text2" className="absolute text-4xl">
+      <p id="text2" className="w-1 h-1 text-4xl">
         HELLO
       </p>
-      <p id="text3" className="absolute text-4xl">
+      <p id="text3" className="w-1 h-1 text-4xl">
         WHADUPPP
       </p>
       <svg

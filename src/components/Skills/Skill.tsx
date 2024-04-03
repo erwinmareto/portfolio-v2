@@ -1,14 +1,39 @@
+"use client";
+
 import Image from "next/image";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 type SkillProps = {
-  className?: string;
   image: string;
   title: string;
 };
 
 const Skill = ({ image, title }: SkillProps) => {
+  useGSAP(() => {
+    const skills = gsap.utils.toArray(".skill");
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#skills",
+        start: "20% 80%",
+        markers: true,
+        toggleActions: "restart pause resume reverse",
+      },
+    });
+    tl.fromTo(
+      skills,
+      { x: -1000, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.2,
+        ease: "circ.out",
+      }
+    );
+  });
   return (
-    <article className="relative flex justify-center border-y-2 border-black overflow-hidden py-4 md:py-8">
+    <article className="skill relative flex justify-center border-y-2 border-black overflow-hidden py-4 md:py-8">
       <h2 className="text-4xl md:text-6xl z-10">{title}</h2>
       <Image
         className="absolute right-0 opacity-80 z-0"

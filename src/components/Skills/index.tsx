@@ -33,7 +33,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="flex flex-col gap-28">
+    <section id="skills" className="flex flex-col gap-28">
       <h1 className="text-6xl px-5 md:text-8xl">Skills.</h1>
       <div className="flex flex-col border-y-2 border-black">
         {images.map((image) => (

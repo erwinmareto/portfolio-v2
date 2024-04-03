@@ -1,10 +1,51 @@
+"use client";
+
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Footer = () => {
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#footer-wave",
+          start: "95% 85%",
+          // end: "bottom 80%",
+          // markers: {
+          //   startColor: "#010101",
+          //   endColor: "#1FEF94",
+          // },
+        },
+      });
+      tl.fromTo(
+        "#wave-svg",
+        { y: 200 },
+        { y: 0, ease: "power4.out", duration: 1 }
+      )
+        .fromTo(
+          "#mark",
+          { x: -1000 },
+          { x: 0, ease: "power4.out", duration: 0.5 }
+        )
+        .fromTo(
+          "#social",
+          { y: -100, opacity: 0 },
+          { y: 0, opacity: 1, ease: "power4.out", duration: 0.5 }
+        )
+        .fromTo(
+          ".icons",
+          { y: 100, opacity: 0 },
+          { y: 0, opacity: 1, ease: "power4.out", duration: 0.5, stagger: 0.5 }
+        );
+    },
+    { scope: "#footer-wave" }
+  );
   return (
-    <footer className="relative overflow-hidden">
+    <footer id="footer-wave" className="relative overflow-hidden">
       <svg
+        id="wave-svg"
         width="1440"
         height="279"
         viewBox="0 0 1440 279"
@@ -18,7 +59,7 @@ const Footer = () => {
       </svg>
 
       <div className="absolute bottom-0 w-full flex flex-col-reverse justify-end gap-4 px-2 md:px-10 py-4 md:flex-row md:justify-between md:items-end">
-        <div className="flex items-end gap-4">
+        <div id="mark" className="flex items-end gap-4">
           <svg
             width="60"
             height="80"
@@ -37,16 +78,18 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <h2 className="text-xl md:text-4xl">Socials</h2>
+          <h2 id="social" className="text-xl md:text-4xl">
+            Socials
+          </h2>
           <div className="flex gap-5">
             <Link href="https://github.com/erwinmareto">
-              <div className="flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl hover:underline">
+              <div className="icons flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl hover:underline">
                 <FaGithub />
                 <h2>GitHub</h2>
               </div>
             </Link>
             <Link href="https://www.linkedin.com/in/erwin-mareto-wikas-a29360233/">
-              <div className="flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl hover:underline">
+              <div className="icons flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl hover:underline">
                 <FaLinkedin />
                 <h2>LinkedIn</h2>
               </div>

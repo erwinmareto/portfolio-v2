@@ -1,9 +1,44 @@
-import Image from "next/image";
+"use client";
 
-type Props = {};
-const Projects = (props: Props) => {
+import Image from "next/image";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+
+const Projects = () => {
+  useGSAP(
+    () => {
+      const projects = gsap.utils.toArray(".project-desc");
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#projects",
+          start: "40% 80%",
+          markers: {
+            startColor: "#f1f222",
+            endColor: "#F45F67",
+          },
+          toggleActions: "restart pause resume reverse",
+        },
+      });
+      tl.fromTo(
+        "img",
+        { x: -1000, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.2,
+          ease: "circ.out",
+        }
+      ).fromTo(
+        projects,
+        { x: 1000, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "circ.out" }
+      );
+    },
+    { scope: "#projects" }
+  );
   return (
-    <section className="flex flex-col gap-28 px-5 py-28">
+    <section id="projects" className="flex flex-col gap-28 px-5 py-28">
       <h1 className="text-6xl md:text-8xl text-right">Projects.</h1>
       <div className="flex flex-wrap justify-around items-center gap-5">
         <Image
@@ -17,7 +52,7 @@ const Projects = (props: Props) => {
         {/* <div className="border-r-8 border-black bg-red-600" /> */}
         {/* <div className="w-px h-full bg-black hidden lg:block" /> */}
 
-        <div className="flex flex-col gap-4 text-center">
+        <div className="project-desc flex flex-col gap-4 text-center">
           <h2 className="text-4xl">WiHire</h2>
           <p className="text-xl max-w-xl">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi,

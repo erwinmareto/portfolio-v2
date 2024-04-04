@@ -9,31 +9,28 @@ const Projects = () => {
     () => {
       const projects = gsap.utils.toArray(".project-desc");
       const tl = gsap.timeline({
+        defaults: {
+          duration: 0.5,
+          ease: "circ.out",
+          stagger: 0.2,
+        },
         scrollTrigger: {
           trigger: "#projects",
           start: "40% 80%",
-          markers: {
-            startColor: "#f1f222",
-            endColor: "#F45F67",
-          },
           toggleActions: "restart pause resume reverse",
         },
       });
-      tl.fromTo(
-        "img",
-        { x: -1000, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1,
-          stagger: 0.2,
-          ease: "circ.out",
-        }
-      ).fromTo(
-        projects,
-        { x: 1000, opacity: 0 },
-        { x: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "circ.out" }
-      );
+
+      tl.fromTo("h1", { x: 1000 }, { x: 0 })
+        .fromTo(
+          "img",
+          { x: -1000, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+          }
+        )
+        .fromTo(projects, { x: 1000, opacity: 0 }, { x: 0, opacity: 1 });
     },
     { scope: "#projects" }
   );

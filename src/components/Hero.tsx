@@ -1,50 +1,49 @@
 "use client";
+
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const Hero = () => {
   useGSAP(
     () => {
-      gsap.to("h1", {
-        duration: 1,
-        ease: "power4.out",
-        stagger: 0.5,
-        y: 0,
-        opacity: 1,
+      const tl = gsap.timeline({
+        defaults: {
+          duration: 1,
+          ease: "power4.out",
+        },
       });
 
-      gsap.fromTo(
-        "p",
+      tl.fromTo(
+        "h1",
         { y: 100, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.5, ease: "power4.out" }
-      );
+        {
+          stagger: 0.5,
+          y: 0,
+          opacity: 1,
+        }
+      ).fromTo("p", { y: 100, opacity: 0 }, { y: 0, opacity: 1 });
 
       gsap.to("svg", {
-        duration: 1,
         repeat: -1,
         repeatDelay: 1,
-        ease: "power4.out",
-
         scaleX: gsap.utils.random(1, 2.5),
-        scaleY: gsap.utils.random(2, 5),
-        color: "#fffbf5",
+        scaleY: gsap.utils.random(2, 4),
         yoyo: true,
       });
+
       const waves = gsap.utils.toArray(".waves");
       gsap.to(gsap.utils.shuffle(waves), {
-        duration: 1,
         repeat: -1,
         repeatDelay: 1,
-        ease: "power4.out",
         stagger: 0.4,
         scaleX: gsap.utils.random(1, 2),
         scaleY: gsap.utils.random(1, 3),
-        color: "#fffbf5",
         yoyo: true,
       });
     },
     { scope: "#hero" }
   );
+
   return (
     <section
       id="hero"
@@ -52,11 +51,9 @@ const Hero = () => {
     >
       <div className="relative z-20 pt-10">
         <div className="flex flex-col items-center">
-          <h1 className="text-6xl text-center translate-y-full opacity-0 md:text-8xl">
-            I&apos;m Erwin
-          </h1>
+          <h1 className="text-6xl text-center md:text-8xl">I&apos;m Erwin</h1>
 
-          <h1 className="text-6xl text-center translate-y-full opacity-0 md:text-8xl">
+          <h1 className="text-6xl text-center md:text-8xl">
             a Web <span>Developer.</span>
           </h1>
         </div>

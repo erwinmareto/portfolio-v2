@@ -10,38 +10,19 @@ const Contacts = () => {
       const tl = gsap.timeline({
         defaults: {
           duration: 0.5,
+          ease: "power4.out",
         },
         scrollTrigger: {
           trigger: "#projects",
           start: "80% 60%",
-          // markers: {
-          //   startColor: "#91F612",
-          //   endColor: "#EFE234",
-          // },
           toggleActions: "restart pause resume reverse",
         },
       });
 
-      tl.fromTo(
-        "#head1",
-        { opacity: 0, x: -1000 },
-        { opacity: 1, x: 0, ease: "power4.out" }
-      )
-        .fromTo(
-          "#head2",
-          { opacity: 0, x: 1000 },
-          { opacity: 1, x: 0, ease: "power4.out" }
-        )
-        .fromTo(
-          "#email",
-          { opacity: 0, x: -1000 },
-          { opacity: 1, x: 0, ease: "power4.out" }
-        )
-        .fromTo(
-          "#resume",
-          { opacity: 0, x: 1000 },
-          { opacity: 1, x: 0, ease: "power4.out" }
-        );
+      tl.fromTo("#head1", { opacity: 0, x: -1000 }, { opacity: 1, x: 0 })
+        .fromTo("#head2", { opacity: 0, x: 1000 }, { opacity: 1, x: 0 })
+        .fromTo("#email", { opacity: 0, x: -1000 }, { opacity: 1, x: 0 })
+        .fromTo("#resume", { opacity: 0, x: 1000 }, { opacity: 1, x: 0 });
     },
     { scope: "#contacts" }
   );

@@ -12,15 +12,8 @@ type SkillProps = {
 const Skill = ({ image, title }: SkillProps) => {
   useGSAP(() => {
     const skills = gsap.utils.toArray(".skill");
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#skills",
-        start: "20% 80%",
-        markers: true,
-        toggleActions: "restart pause resume reverse",
-      },
-    });
-    tl.fromTo(
+
+    gsap.fromTo(
       skills,
       { x: -1000, opacity: 0 },
       {
@@ -29,6 +22,11 @@ const Skill = ({ image, title }: SkillProps) => {
         duration: 1,
         stagger: 0.2,
         ease: "circ.out",
+        scrollTrigger: {
+          trigger: "#skills",
+          start: "30% 80%",
+          toggleActions: "restart pause resume reverse",
+        },
       }
     );
   });

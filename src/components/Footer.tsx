@@ -9,35 +9,23 @@ const Footer = () => {
   useGSAP(
     () => {
       const tl = gsap.timeline({
+        defaults: {
+          ease: "power4.out",
+          duration: 0.5,
+        },
         scrollTrigger: {
           trigger: "#footer-wave",
           start: "95% 85%",
-          // end: "bottom 80%",
-          // markers: {
-          //   startColor: "#010101",
-          //   endColor: "#1FEF94",
-          // },
         },
       });
-      tl.fromTo(
-        "#wave-svg",
-        { y: 200 },
-        { y: 0, ease: "power4.out", duration: 1 }
-      )
-        .fromTo(
-          "#mark",
-          { x: -1000 },
-          { x: 0, ease: "power4.out", duration: 0.5 }
-        )
-        .fromTo(
-          "#social",
-          { y: -100, opacity: 0 },
-          { y: 0, opacity: 1, ease: "power4.out", duration: 0.5 }
-        )
+
+      tl.fromTo("#wave-svg", { y: 200 }, { y: 0, duration: 1 })
+        .fromTo("#mark", { x: -1000 }, { x: 0 })
+        .fromTo("#social", { y: -100, opacity: 0 }, { y: 0, opacity: 1 })
         .fromTo(
           ".icons",
           { y: 100, opacity: 0 },
-          { y: 0, opacity: 1, ease: "power4.out", duration: 0.5, stagger: 0.5 }
+          { y: 0, opacity: 1, stagger: 0.5 }
         );
     },
     { scope: "#footer-wave" }

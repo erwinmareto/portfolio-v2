@@ -9,33 +9,27 @@ const About = () => {
     () => {
       gsap.registerPlugin(ScrollTrigger);
       const tl = gsap.timeline({
+        defaults: {
+          duration: 0.5,
+          ease: "power4.out",
+        },
         scrollTrigger: {
           trigger: "img",
           start: "center 80%",
-          markers: true,
-
-          toggleActions: "restart pause resume pause",
+          toggleActions: "restart none none reverse",
         },
       });
       tl.to("img", {
-        duration: 0.5,
-        ease: "power4.out",
         x: 0,
-      });
-
-      tl.to("h1", {
-        duration: 0.5,
-        ease: "power4.out",
-        x: 0,
-        opacity: 1,
-      });
-
-      tl.to("#desc", {
-        duration: 0.5,
-        ease: "power4.out",
-        y: 0,
-        opacity: 1,
-      });
+      })
+        .to("h1", {
+          x: 0,
+          opacity: 1,
+        })
+        .to("#desc", {
+          y: 0,
+          opacity: 1,
+        });
     },
     { scope: "#about" }
   );

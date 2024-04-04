@@ -1,4 +1,3 @@
-import Image from "next/image";
 import NavbarMenu from "./NavbarMenu";
 
 const Navbar = () => {

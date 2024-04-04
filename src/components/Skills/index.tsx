@@ -1,3 +1,7 @@
+"use client";
+
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import Skill from "./Skill";
 
 const Skills = () => {
@@ -31,6 +35,25 @@ const Skills = () => {
       title: "Tailwind",
     },
   ];
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        "h1",
+        { x: -1000, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: "#skills",
+            start: "50% 80%",
+            toggleActions: "restart pause resume reverse",
+          },
+        }
+      );
+    },
+    { scope: "#skills" }
+  );
 
   return (
     <section id="skills" className="flex flex-col gap-28">

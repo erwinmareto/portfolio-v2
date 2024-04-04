@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
 
 const Projects = () => {
   useGSAP(
@@ -38,13 +39,15 @@ const Projects = () => {
     <section id="projects" className="flex flex-col gap-28 px-5 py-28">
       <h1 className="text-6xl md:text-8xl text-right">Projects.</h1>
       <div className="flex flex-wrap justify-around items-center gap-5">
-        <Image
-          className="rounded-xl"
-          src={"/wihire.png"}
-          width={500}
-          height={500}
-          alt="wihire"
-        />
+        <Link href="https://wihire.vercel.app">
+          <Image
+            className="rounded-xl transition-all hover:border-4 hover:border-sky-300"
+            src={"/wihire.png"}
+            width={500}
+            height={500}
+            alt="wihire"
+          />
+        </Link>
 
         {/* <div className="border-r-8 border-black bg-red-600" /> */}
         {/* <div className="w-px h-full bg-black hidden lg:block" /> */}
@@ -52,10 +55,8 @@ const Projects = () => {
         <div className="project-desc flex flex-col gap-4 text-center">
           <h2 className="text-4xl">WiHire</h2>
           <p className="text-xl max-w-xl">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi,
-            recusandae. Pariatur ut recusandae officiis odit ipsam iste nulla
-            molestiae culpa molestias doloremque, tempora incidunt provident
-            laborum, quisquam ullam error nesciunt.
+            Job portal application that facillitates effortless connections
+            between companies and job seekers with detailed information.
           </p>
         </div>
       </div>

@@ -59,10 +59,9 @@ const Hero = () => {
         </div>
 
         <p className="text-center my-5 p-5 text-xl lg:px-64">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
-          consectetur pariatur possimus, vero voluptatum quo saepe magnam, quia
-          beatae at quaerat officiis tenetur blanditiis. Provident explicabo id
-          illum corporis cumque?
+          With a keen eye for detail, I bring designs to life on the web,
+          ensuring a harmonious fusion of visual appeal and optimal user
+          experiences.
         </p>
       </div>
 

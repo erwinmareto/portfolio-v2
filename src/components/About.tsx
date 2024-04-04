@@ -46,13 +46,14 @@ const About = () => {
           id="desc"
           className="max-w-2xl text-2xl z-10 translate-y-full opacity-0"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ab
-          dignissimos libero nesciunt labore quibusdam sapiente eos nisi non.
-          Eligendi, reiciendis vel. Mollitia, et reiciendis consequatur ipsam
-          voluptatibus tempore a.
+          I am web developer with a focus on frontend development. Specializes
+          in JavaScript, and React, Recipient of the &apos;Best Group of Final
+          Project&apos; award the Rakamin Fullstack Web Development Bootcamp.I
+          am currently diving deeper into common libraries and frameworks that
+          are used in React.
         </p>
         <Image
-          className="absolute -top-32 -right-0 translate-x-full"
+          className="absolute -top-24 -right-0 translate-x-full"
           src={"/bw-pic.png"}
           width={500}
           height={500}

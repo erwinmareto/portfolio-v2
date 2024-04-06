@@ -1,14 +1,16 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import Link from "next/link";
 
 const Projects = () => {
+  const projects = useRef(null);
   useGSAP(
     () => {
-      const projects = gsap.utils.toArray(".project-desc");
+      // const projects = gsap.utils.toArray(".project-desc");
       const tl = gsap.timeline({
         defaults: {
           duration: 0.5,
@@ -31,12 +33,16 @@ const Projects = () => {
             opacity: 1,
           }
         )
-        .fromTo(projects, { x: 1000, opacity: 0 }, { x: 0, opacity: 1 });
+        .fromTo(".project-desc", { x: 1000, opacity: 0 }, { x: 0, opacity: 1 });
     },
-    { scope: "#projects" }
+    { scope: projects }
   );
   return (
-    <section id="projects" className="flex flex-col gap-28 px-5 py-28">
+    <section
+      ref={projects}
+      id="projects"
+      className="flex flex-col gap-28 px-5 py-28"
+    >
       <h1 className="text-6xl md:text-8xl text-right">Projects.</h1>
       <div className="flex flex-wrap justify-around items-center gap-5">
         <Link href="https://wihire.vercel.app">

@@ -1,11 +1,13 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const Footer = () => {
+  const footer = useRef(null);
   useGSAP(
     () => {
       const tl = gsap.timeline({
@@ -28,10 +30,10 @@ const Footer = () => {
           { y: 0, opacity: 1, stagger: 0.5 }
         );
     },
-    { scope: "#footer-wave" }
+    { scope: footer }
   );
   return (
-    <footer id="footer-wave" className="relative overflow-hidden">
+    <footer ref={footer} id="footer-wave" className="relative overflow-hidden">
       <svg
         id="wave-svg"
         width="1440"

@@ -1,10 +1,12 @@
 "use client";
 
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import Skill from "./Skill";
 
 const Skills = () => {
+  const skills = useRef(null);
   const images = [
     {
       image: "/skills/html-logo.png",
@@ -52,11 +54,11 @@ const Skills = () => {
         }
       );
     },
-    { scope: "#skills" }
+    { scope: skills }
   );
 
   return (
-    <section id="skills" className="flex flex-col gap-28">
+    <section ref={skills} id="skills" className="flex flex-col gap-28">
       <h1 className="text-6xl px-5 md:text-8xl">Skills.</h1>
       <div className="flex flex-col border-y-2 border-black">
         {images.map((image) => (

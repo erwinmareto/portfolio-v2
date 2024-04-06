@@ -1,10 +1,12 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const Contacts = () => {
+  const contacts = useRef(null);
   useGSAP(
     () => {
       const tl = gsap.timeline({
@@ -13,9 +15,9 @@ const Contacts = () => {
           ease: "power4.out",
         },
         scrollTrigger: {
-          trigger: "#projects",
+          trigger: "#contacts",
           start: "80% 60%",
-          toggleActions: "restart pause resume reverse",
+          toggleActions: "restart none none reverse",
         },
       });
 
@@ -24,11 +26,12 @@ const Contacts = () => {
         .fromTo("#email", { opacity: 0, x: -1000 }, { opacity: 1, x: 0 })
         .fromTo("#resume", { opacity: 0, x: 1000 }, { opacity: 1, x: 0 });
     },
-    { scope: "#contacts" }
+    { scope: contacts }
   );
   return (
     <>
       <section
+        ref={contacts}
         id="contacts"
         className="flex flex-col px-5 pt-32 gap-16 md:px-24 md:py-32"
       >

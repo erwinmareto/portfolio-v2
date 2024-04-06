@@ -1,10 +1,13 @@
 "use client";
+
+import { useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 
 const About = () => {
+  const about = useRef(null);
   useGSAP(
     () => {
       gsap.registerPlugin(ScrollTrigger);
@@ -31,10 +34,11 @@ const About = () => {
           opacity: 1,
         });
     },
-    { scope: "#about" }
+    { scope: about }
   );
   return (
     <section
+      ref={about}
       id="about"
       className="relative flex flex-col gap-5 bg-neutral-950 text-white px-5 py-28"
     >

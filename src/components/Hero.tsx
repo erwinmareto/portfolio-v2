@@ -1,9 +1,12 @@
 "use client";
 
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const Hero = () => {
+  const hero = useRef(null);
+
   useGSAP(
     () => {
       const tl = gsap.timeline({
@@ -31,8 +34,8 @@ const Hero = () => {
         yoyo: true,
       });
 
-      const waves = gsap.utils.toArray(".waves");
-      gsap.to(gsap.utils.shuffle(waves), {
+      // const waves = gsap.utils.toArray(".waves");
+      gsap.to(".waves", {
         repeat: -1,
         repeatDelay: 1,
         stagger: 0.4,
@@ -41,12 +44,13 @@ const Hero = () => {
         yoyo: true,
       });
     },
-    { scope: "#hero" }
+    { scope: hero }
   );
 
   return (
     <section
       id="hero"
+      ref={hero}
       className="w-full flex flex-col items-center overflow-hidden"
     >
       <div className="relative z-20 pt-10">

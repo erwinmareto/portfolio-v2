@@ -11,10 +11,10 @@ type SkillProps = {
 
 const Skill = ({ image, title }: SkillProps) => {
   useGSAP(() => {
-    const skills = gsap.utils.toArray(".skill");
+    // const skills = gsap.utils.toArray(".skill");
 
     gsap.fromTo(
-      skills,
+      ".skill",
       { x: -1000, opacity: 0 },
       {
         x: 0,

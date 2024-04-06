@@ -14,7 +14,7 @@ const Projects = () => {
       const tl = gsap.timeline({
         defaults: {
           duration: 0.5,
-          ease: "circ.out",
+          ease: "power4.out",
           stagger: 0.2,
         },
         scrollTrigger: {
@@ -27,13 +27,13 @@ const Projects = () => {
       tl.fromTo("h1", { x: 1000 }, { x: 0 })
         .fromTo(
           "img",
-          { x: -1000, opacity: 0 },
+          { x: -100, opacity: 0 },
           {
             x: 0,
             opacity: 1,
           }
         )
-        .fromTo(".project-desc", { x: 1000, opacity: 0 }, { x: 0, opacity: 1 });
+        .fromTo(".project-desc", { x: 100, opacity: 0 }, { x: 0, opacity: 1 });
     },
     { scope: projects }
   );

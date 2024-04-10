@@ -1,7 +1,19 @@
-type Props = {};
-const NavbarMenu = (props: Props) => {
+"use client";
+
+import { Dispatch, SetStateAction } from "react";
+
+type Props = {
+  // showClick: () => void;
+  showMenu: boolean;
+  setShowMenu: Dispatch<SetStateAction<boolean>>;
+};
+
+const NavbarMenu = ({ showMenu, setShowMenu }: Props) => {
   return (
-    <div className="flex items-center bg-neutral-950 rounded-full gap-2 px-5 py-2 transition-all hover:bg-neutral-800 hover:px-10">
+    <div
+      onClick={() => setShowMenu(!showMenu)}
+      className="flex items-center bg-neutral-950 rounded-full gap-2 px-5 py-2 transition-all hover:bg-neutral-800 hover:px-10"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

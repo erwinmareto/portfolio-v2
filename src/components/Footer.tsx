@@ -10,18 +10,18 @@ const Footer = () => {
   const footer = useRef(null);
   useGSAP(
     () => {
-      const tl = gsap.timeline({
-        defaults: {
-          ease: "power4.out",
-          duration: 0.5,
-        },
-        scrollTrigger: {
-          trigger: "#footer-wave",
-          start: "95% 85%",
-        },
-      });
-
-      tl.fromTo("#wave-svg", { y: 200 }, { y: 0, duration: 1 })
+      gsap
+        .timeline({
+          defaults: {
+            ease: "power4.out",
+            duration: 0.5,
+          },
+          scrollTrigger: {
+            trigger: "#footer-wave",
+            start: "95% bottom",
+          },
+        })
+        .fromTo("#wave-svg", { y: 200 }, { y: 0, duration: 1 })
         .fromTo("#mark", { x: -1000 }, { x: 0 })
         .fromTo("#social", { y: -100, opacity: 0 }, { y: 0, opacity: 1 })
         .fromTo(

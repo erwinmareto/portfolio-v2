@@ -46,7 +46,7 @@ const Contacts = () => {
         <div className="flex flex-col gap-4">
           <h2 id="email">
             <Link
-              className="text-2xl underline md:text-4xl lg:text-6xl hover:no-underline"
+              className="text-2xl bg-left-bottom bg-gradient-to-r from-[#81A6D3] to-[#5B8DCB] bg-[length:100%_4px] bg-no-repeat hover:bg-[length:0%_4px] transition-all duration-500 ease-out md:text-4xl lg:text-6xl"
               href="mailto:erwinmaretow@gmail.com"
             >
               erwinmaretow@gmail.com
@@ -54,7 +54,7 @@ const Contacts = () => {
           </h2>
           <h2 id="resume" className="md:text-right">
             <Link
-              className="text-2xl md:text-4xl lg:text-6xl hover:underline"
+              className="text-2xl bg-left-bottom bg-gradient-to-r from-[#81A6D3] to-[#5B8DCB] bg-[length:0%_4px] bg-no-repeat hover:bg-[length:100%_4px] transition-all duration-500 ease-out md:text-4xl lg:text-6xl"
               href="mailto:erwinmaretow@gmail.com"
             >
               Resume

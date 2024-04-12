@@ -31,7 +31,7 @@ const Skill = ({ image, title }: SkillProps) => {
     );
   });
   return (
-    <article className="skill relative flex justify-center border-y-2 border-black overflow-hidden py-4 md:py-8">
+    <article className="skill relative flex justify-center border-y-2 border-black overflow-hidden transition-colors py-4 hover:bg-neutral-950 hover:text-white md:py-8">
       <h2 className="text-4xl md:text-6xl z-10">{title}</h2>
       <Image
         className="absolute right-0 opacity-80 z-0"

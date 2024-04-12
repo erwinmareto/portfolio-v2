@@ -73,15 +73,19 @@ const Footer = () => {
           </h2>
           <div className="flex gap-5">
             <Link href="https://github.com/erwinmareto">
-              <div className="icons flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl hover:underline">
+              <div className="icons flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl">
                 <FaGithub />
-                <h2>GitHub</h2>
+                <h2 className="flex gap-5 bg-left-bottom bg-gradient-to-r from-neutral-950 to-neutral-950 bg-[length:0%_4px] bg-no-repeat hover:bg-[length:100%_4px] transition-all duration-500 ease-out ">
+                  GitHub
+                </h2>
               </div>
             </Link>
             <Link href="https://www.linkedin.com/in/erwin-mareto-wikas-a29360233/">
-              <div className="icons flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl hover:underline">
+              <div className="icons flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl">
                 <FaLinkedin />
-                <h2>LinkedIn</h2>
+                <h2 className="flex gap-5 bg-left-bottom bg-gradient-to-r from-neutral-950 to-neutral-950 bg-[length:0%_4px] bg-no-repeat hover:bg-[length:100%_4px] transition-all duration-500 ease-out ">
+                  LinkedIn
+                </h2>
               </div>
             </Link>
           </div>

@@ -11,56 +11,23 @@ const Navbar = () => {
   const navbar = useRef(null);
   const items = useRef(null);
   gsap.registerPlugin(Flip);
-  // const showClick = () => {
-  //   // const menus = gsap.utils.toArray(".menu-items");
-  //   const state = Flip.getState(".menu-items");
-  //   setShowMenu(!showMenu);
-  //   // menus.forEach((item) =>
-  //   //   showMenu ? (item.style.display = "block") : (item.style.display = "none")
-  //   // );
-  //   Flip.from(state, {
-  //     duration: 1,
-  //     scale: true,
-  //     absolute: true,
-  //     ease: "power4.out",
-  //     stagger: 0.2,
-  //     onEnter: (elements) =>
-  //       gsap.fromTo(
-  //         elements,
-  //         { opacity: 0, scale: 0 },
-  //         { opacity: 1, scale: 1 }
-  //       ),
-  //     onLeave: (elements) => {
-  //       gsap.to(elements, { opacity: 0, scale: 0 });
-  //     },
-  //   });
-  // };
   useGSAP(
-    // const clickAnimation = () => gsap.to("h1", { scale: 1.2 });
     () => {
-      const state = Flip.getState(".menu-items, #items", {
-        props: "backgroundColor",
-      });
+      const tl = gsap.timeline();
+      const state = Flip.getState(".menu-items, #items");
 
-      Flip.from(state, {
-        // duration: 1,
-        // paused: true,
-        // scale: true,
-        absolute: true,
-        ease: "power4.out",
-        // targets: ".menu-items",
-        // stagger: 0.02,
-        onEnter: (elements) => {
-          gsap.fromTo(
-            elements,
-            { opacity: 0, x: 1000 },
-            { duration: 1, opacity: 1, x: 0 }
-          );
-        },
-        onLeave: (elements) => {
-          gsap.to(elements, { opacity: 0, x: 0, duration: 1 });
-        },
-      });
+      tl.add(
+        Flip.from(state, {
+          duration: 1,
+          ease: "power4.out",
+          targets: items.current,
+        })
+      );
+      tl.fromTo(
+        ".menu-items",
+        { x: -100, opacity: 0 },
+        { duration: 1, x: 0, opacity: 1, stagger: 0.2 }
+      );
     },
     { dependencies: [showMenu] }
   );
@@ -80,47 +47,46 @@ const Navbar = () => {
             fill="#0EABEC"
           />
         </svg>
-        <NavbarMenu
-          // showClick={setShowMenu}
-          showMenu={showMenu}
-          setShowMenu={setShowMenu}
-        />
+        <NavbarMenu showMenu={showMenu} setShowMenu={setShowMenu} />
       </div>
-      {/* {showMenu && ( */}
+
       <div
         ref={items}
         id="items"
-        className={`flex flex-col text-white ${
-          showMenu ? "bg-neutral-950" : "bg-neutral-950 hidden"
+        className={`flex flex-col text-white bg-neutral-950 ${
+          showMenu ? "block" : "hidden"
         }`}
       >
-        {/* {showMenu && ( */}
         <>
-          <h1
-            className={`menu-items text-4xl text-center p-5 transition-all ${
-              showMenu ? "block" : "hidden"
-            } hover:scale-110 hover:bg-neutral-900  md:text-6xl`}
-          >
-            About
-          </h1>
-          <h1
-            className={`menu-items text-4xl text-center p-5 transition-all ${
-              showMenu ? "block" : "hidden"
-            } hover:scale-110 hover:bg-neutral-900  md:text-6xl`}
-          >
-            Projects
-          </h1>
-          <h1
-            className={`menu-items text-4xl text-center p-5 transition-all ${
-              showMenu ? "block" : "hidden"
-            } hover:scale-110 hover:bg-neutral-900  md:text-6xl`}
-          >
-            Contacts
-          </h1>
+          <a href="#about">
+            <h1
+              className={`menu-items text-4xl text-center p-5 transition-all  ${
+                showMenu ? "block" : "hidden"
+              } hover:scale-110 hover:bg-neutral-900 md:text-6xl`}
+            >
+              About
+            </h1>
+          </a>
+          <a href="#projects">
+            <h1
+              className={`menu-items text-4xl text-center p-5 transition-all  ${
+                showMenu ? "block" : "hidden"
+              } hover:scale-110 hover:bg-neutral-900 md:text-6xl`}
+            >
+              Projects
+            </h1>
+          </a>
+          <a href="#contacts">
+            <h1
+              className={`menu-items text-4xl text-center p-5 transition-all  ${
+                showMenu ? "block" : "hidden"
+              } hover:scale-110 hover:bg-neutral-900 md:text-6xl`}
+            >
+              Contacts
+            </h1>
+          </a>
         </>
-        {/* )} */}
       </div>
-      {/* // )} */}
     </nav>
   );
 };

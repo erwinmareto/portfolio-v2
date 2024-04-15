@@ -2,7 +2,6 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { Flip } from "gsap/Flip";
 import { Dispatch, SetStateAction } from "react";
 
 type Props = {
@@ -11,7 +10,6 @@ type Props = {
 };
 
 const NavbarMenu = ({ showMenu, setShowMenu }: Props) => {
-  gsap.registerPlugin(Flip);
   useGSAP(
     () => {
       gsap.to("#burger", {
@@ -25,7 +23,7 @@ const NavbarMenu = ({ showMenu, setShowMenu }: Props) => {
   return (
     <div
       onClick={() => setShowMenu(!showMenu)}
-      className="flex items-center bg-neutral-950 rounded-full gap-2 px-5 py-2"
+      className="flex items-center bg-neutral-950 rounded-full gap-2 px-5 py-2 transition-transform hover:scale-110 hover:bg-neutral-900"
     >
       <svg
         id="burger"

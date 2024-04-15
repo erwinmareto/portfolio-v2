@@ -13,21 +13,14 @@ const Navbar = () => {
   gsap.registerPlugin(Flip);
   useGSAP(
     () => {
-      const tl = gsap.timeline();
       const state = Flip.getState(".menu-items, #items");
 
-      tl.add(
-        Flip.from(state, {
-          duration: 1,
-          ease: "power4.out",
-          targets: items.current,
-        })
-      );
-      tl.fromTo(
-        ".menu-items",
-        { x: -100, opacity: 0 },
-        { duration: 1, x: 0, opacity: 1, stagger: 0.2 }
-      );
+      Flip.from(state, {
+        duration: 1,
+        ease: "power4.out",
+        targets: items.current,
+        absoluteOnLeave: true,
+      });
     },
     { dependencies: [showMenu] }
   );

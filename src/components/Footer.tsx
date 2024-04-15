@@ -10,18 +10,18 @@ const Footer = () => {
   const footer = useRef(null);
   useGSAP(
     () => {
-      const tl = gsap.timeline({
-        defaults: {
-          ease: "power4.out",
-          duration: 0.5,
-        },
-        scrollTrigger: {
-          trigger: "#footer-wave",
-          start: "95% 85%",
-        },
-      });
-
-      tl.fromTo("#wave-svg", { y: 200 }, { y: 0, duration: 1 })
+      gsap
+        .timeline({
+          defaults: {
+            ease: "power4.out",
+            duration: 0.5,
+          },
+          scrollTrigger: {
+            trigger: "#footer-wave",
+            start: "95% bottom",
+          },
+        })
+        .fromTo("#wave-svg", { y: 200 }, { y: 0, duration: 1 })
         .fromTo("#mark", { x: -1000 }, { x: 0 })
         .fromTo("#social", { y: -100, opacity: 0 }, { y: 0, opacity: 1 })
         .fromTo(
@@ -73,15 +73,19 @@ const Footer = () => {
           </h2>
           <div className="flex gap-5">
             <Link href="https://github.com/erwinmareto">
-              <div className="icons flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl hover:underline">
+              <div className="icons flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl">
                 <FaGithub />
-                <h2>GitHub</h2>
+                <h2 className="flex gap-5 bg-left-bottom bg-gradient-to-r from-neutral-950 to-neutral-950 bg-[length:0%_4px] bg-no-repeat hover:bg-[length:100%_4px] transition-all duration-500 ease-out ">
+                  GitHub
+                </h2>
               </div>
             </Link>
             <Link href="https://www.linkedin.com/in/erwin-mareto-wikas-a29360233/">
-              <div className="icons flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl hover:underline">
+              <div className="icons flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl">
                 <FaLinkedin />
-                <h2>LinkedIn</h2>
+                <h2 className="flex gap-5 bg-left-bottom bg-gradient-to-r from-neutral-950 to-neutral-950 bg-[length:0%_4px] bg-no-repeat hover:bg-[length:100%_4px] transition-all duration-500 ease-out ">
+                  LinkedIn
+                </h2>
               </div>
             </Link>
           </div>

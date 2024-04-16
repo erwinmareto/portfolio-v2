@@ -11,7 +11,7 @@ const Contacts = () => {
     () => {
       const tl = gsap.timeline({
         defaults: {
-          duration: 0.5,
+          duration: 0.8,
           ease: "power4.out",
         },
         scrollTrigger: {

@@ -13,8 +13,8 @@ const Footer = () => {
       gsap
         .timeline({
           defaults: {
-            ease: "power4.out",
-            duration: 0.5,
+            ease: "power1.inOut",
+            duration: 0.8,
           },
           scrollTrigger: {
             trigger: "#footer-wave",

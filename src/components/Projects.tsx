@@ -13,8 +13,8 @@ const Projects = () => {
       // const projects = gsap.utils.toArray(".project-desc");
       const tl = gsap.timeline({
         defaults: {
-          duration: 0.5,
-          ease: "power4.out",
+          duration: 0.8,
+          ease: "power1.in",
           stagger: 0.2,
         },
         scrollTrigger: {
@@ -24,15 +24,8 @@ const Projects = () => {
         },
       });
 
-      tl.fromTo("h1", { x: 1000 }, { x: 0 })
-        .fromTo(
-          "img",
-          { x: -100, opacity: 0 },
-          {
-            x: 0,
-            opacity: 1,
-          }
-        )
+      tl.fromTo("h1", { x: 100, opacity: 0 }, { x: 0, opacity: 1 })
+        .fromTo("img", { x: -100, opacity: 0 }, { x: 0, opacity: 1 })
         .fromTo(".project-desc", { x: 100, opacity: 0 }, { x: 0, opacity: 1 });
     },
     { scope: projects }

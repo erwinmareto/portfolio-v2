@@ -1,12 +1,36 @@
-type Props = {};
-const NavbarMenu = (props: Props) => {
+"use client";
+
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { Dispatch, SetStateAction } from "react";
+
+type Props = {
+  showMenu: boolean;
+  setShowMenu: Dispatch<SetStateAction<boolean>>;
+};
+
+const NavbarMenu = ({ showMenu, setShowMenu }: Props) => {
+  useGSAP(
+    () => {
+      gsap.to("#burger", {
+        duration: 0.5,
+        ease: "power4.out",
+        rotate: showMenu ? 90 : 0,
+      });
+    },
+    { dependencies: [showMenu] }
+  );
   return (
-    <div className="flex items-center bg-neutral-950 rounded-full gap-2 px-5 py-2 transition-all hover:bg-neutral-800 hover:px-10">
+    <div
+      onClick={() => setShowMenu(!showMenu)}
+      className="flex items-center bg-neutral-950 rounded-full gap-2 px-5 py-2 transition-transform hover:scale-110 hover:bg-neutral-900"
+    >
       <svg
+        id="burger"
+        className="w-10 h-10 text-white"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className="w-10 h-10 text-white"
       >
         <path
           fill-rule="evenodd"

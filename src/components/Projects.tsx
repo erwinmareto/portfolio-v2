@@ -58,6 +58,24 @@ const Projects = () => {
             between companies and job seekers with detailed information.
           </p>
         </div>
+
+        <div className="project-desc flex flex-col gap-4 text-center">
+          <h2 className="text-4xl">&quot;Attention!&quot; Landing Site</h2>
+          <p className="text-xl max-w-xl">
+            Landing site for the clothing brand &quot;Attention!&quot;, a
+            fashion-forward clothing brand offering trendy graphic tees with
+            bold, viral designs for style-conscious consumers.
+          </p>
+        </div>
+        <Link href="https://attention.vercel.app">
+          <Image
+            className="rounded-xl transition-all hover:border-4 hover:border-red-600"
+            src={"/attention.png"}
+            width={500}
+            height={500}
+            alt="wihire"
+          />
+        </Link>
       </div>
     </section>
   );

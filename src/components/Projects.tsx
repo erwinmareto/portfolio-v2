@@ -76,6 +76,28 @@ const Projects = () => {
             alt="wihire"
           />
         </Link>
+
+        <Link href="https://wihire.vercel.app">
+          <Image
+            className="rounded-xl transition-all hover:border-4 hover:border-sky-300"
+            src={"/reminderoo.png"}
+            width={500}
+            height={500}
+            alt="reminderoo"
+          />
+        </Link>
+
+        {/* <div className="border-r-8 border-black bg-red-600" /> */}
+        {/* <div className="w-px h-full bg-black hidden lg:block" /> */}
+
+        <div className="project-desc flex flex-col gap-4 text-center">
+          <h2 className="text-4xl">Reminderoo</h2>
+          <p className="text-xl max-w-xl">
+            A Subscription Reminder web app that helps users manage their
+            subscriptions, avoid unnecessary fees, and optimize their
+            subscriptions.
+          </p>
+        </div>
       </div>
     </section>
   );

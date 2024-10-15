@@ -14,19 +14,24 @@ const Projects = () => {
       const tl = gsap.timeline({
         defaults: {
           duration: 0.8,
-          ease: "power1.in",
+          ease: "circ.out",
           stagger: 0.2,
         },
         scrollTrigger: {
           trigger: "#projects",
-          start: "40% 80%",
-          toggleActions: "restart pause resume reverse",
+          start: "30% 80%",
+          // toggleActions: "restart pause resume reverse",
         },
       });
 
       tl.fromTo("h1", { x: 100, opacity: 0 }, { x: 0, opacity: 1 })
-        .fromTo("img", { x: -100, opacity: 0 }, { x: 0, opacity: 1 })
-        .fromTo(".project-desc", { x: 100, opacity: 0 }, { x: 0, opacity: 1 });
+        // .fromTo(".project-img", { x: -100, opacity: 0 }, { x: 0, opacity: 1 })
+        // .add([
+        //   gsap.fromTo(".odd", { x: 100, opacity: 0 }, { x: 0, opacity: 1 }),
+        //   gsap.fromTo(".even", { x: -100, opacity: 0 }, { x: 0, opacity: 1 }),
+        // ]);
+        .fromTo(".odd", { x: -100, opacity: 0 }, { x: 0, opacity: 1 })
+        .fromTo(".even", { x: 100, opacity: 0 }, { x: 0, opacity: 1 });
     },
     { scope: projects }
   );
@@ -38,9 +43,28 @@ const Projects = () => {
     >
       <h1 className="text-6xl md:text-8xl text-right">Projects.</h1>
       <div className="flex flex-wrap justify-around items-center gap-5">
-        <Link href="https://wihire.vercel.app">
+        <Link href="https://reminderoo.vercel.app" className="project-img odd">
           <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-sky-300"
+            className="rounded-xl transition-all hover:border-4 hover:border-[#4336F3]"
+            src={"/reminderoo.png"}
+            width={500}
+            height={500}
+            alt="reminderoo"
+          />
+        </Link>
+
+        <div className="odd flex flex-col gap-4 text-center">
+          <h2 className="text-4xl">Reminderoo</h2>
+          <p className="text-xl max-w-xl">
+            A Subscription Reminder web app that helps users manage their
+            subscriptions, avoid unnecessary fees, and optimize their
+            subscriptions.
+          </p>
+        </div>
+
+        <Link href="https://wihire.vercel.app" className="project-img even">
+          <Image
+            className="rounded-xl transition-all hover:border-4 hover:border-sky-300 lg:hidden"
             src={"/wihire.png"}
             width={500}
             height={500}
@@ -51,7 +75,7 @@ const Projects = () => {
         {/* <div className="border-r-8 border-black bg-red-600" /> */}
         {/* <div className="w-px h-full bg-black hidden lg:block" /> */}
 
-        <div className="project-desc flex flex-col gap-4 text-center">
+        <div className="even flex flex-col gap-4 text-center">
           <h2 className="text-4xl">WiHire</h2>
           <p className="text-xl max-w-xl">
             Job portal application that facillitates effortless connections
@@ -59,7 +83,27 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="project-desc flex flex-col gap-4 text-center">
+        <Link href="https://wihire.vercel.app" className="project-img even">
+          <Image
+            className="rounded-xl transition-all hover:border-4 hover:border-sky-300 max-md:hidden"
+            src={"/wihire.png"}
+            width={500}
+            height={500}
+            alt="wihire"
+          />
+        </Link>
+
+        <Link href="https://attention.vercel.app" className="project-img odd">
+          <Image
+            className="rounded-xl transition-all hover:border-4 hover:border-red-600"
+            src={"/attention.png"}
+            width={500}
+            height={500}
+            alt="Attention!"
+          />
+        </Link>
+
+        <div className="odd flex flex-col gap-4 text-center">
           <h2 className="text-4xl">&quot;Attention!&quot; Landing Site</h2>
           <p className="text-xl max-w-xl">
             Landing site for the clothing brand &quot;Attention!&quot;, a
@@ -67,37 +111,33 @@ const Projects = () => {
             bold, viral designs for style-conscious consumers.
           </p>
         </div>
-        <Link href="https://attention.vercel.app">
+
+        <Link href="https://beaknbite.vercel.app/" className="project-img even">
           <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-red-600"
-            src={"/attention.png"}
+            className="rounded-xl transition-all hover:border-4 hover:border-[#DD7047] lg:hidden"
+            src={"/beaknbite.png"}
             width={500}
             height={500}
-            alt="wihire"
+            alt="beak&bite"
           />
         </Link>
 
-        <Link href="https://wihire.vercel.app">
-          <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-sky-300"
-            src={"/reminderoo.png"}
-            width={500}
-            height={500}
-            alt="reminderoo"
-          />
-        </Link>
-
-        {/* <div className="border-r-8 border-black bg-red-600" /> */}
-        {/* <div className="w-px h-full bg-black hidden lg:block" /> */}
-
-        <div className="project-desc flex flex-col gap-4 text-center">
-          <h2 className="text-4xl">Reminderoo</h2>
+        <div className="even flex flex-col gap-4 text-center">
+          <h2 className="text-4xl">&quot;Beak &amp; Bite&quot; Landing Site</h2>
           <p className="text-xl max-w-xl">
-            A Subscription Reminder web app that helps users manage their
-            subscriptions, avoid unnecessary fees, and optimize their
-            subscriptions.
+            landing site of a fast franchise called &quot;Beak &amp; Bite&quot;
+            that showcases the company profile and their bussiness model.
           </p>
         </div>
+        <Link href="https://beaknbite.vercel.app" className="project-img even">
+          <Image
+            className="rounded-xl transition-all hover:border-4 hover:border-[#DD7047] max-md:hidden"
+            src={"/beaknbite.png"}
+            width={500}
+            height={500}
+            alt="beak&bite"
+          />
+        </Link>
       </div>
     </section>
   );

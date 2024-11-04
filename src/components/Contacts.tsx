@@ -16,8 +16,9 @@ const Contacts = () => {
         },
         scrollTrigger: {
           trigger: "#contacts",
-          start: "80% 60%",
-          toggleActions: "restart none none reverse",
+          start: "70% 60%",
+          // toggleActions: "restart none none reverse",
+          // markers: true,
         },
       });
 

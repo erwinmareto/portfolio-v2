@@ -49,7 +49,8 @@ const Skills = () => {
           scrollTrigger: {
             trigger: "#skills",
             start: "50% 80%",
-            toggleActions: "restart pause resume reverse",
+            // toggleActions: "restart pause resume reverse",
+            // markers: true,
           },
         }
       );

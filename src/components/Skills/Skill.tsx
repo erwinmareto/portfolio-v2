@@ -24,8 +24,9 @@ const Skill = ({ image, title }: SkillProps) => {
         ease: "circ.out",
         scrollTrigger: {
           trigger: "#skills",
-          start: "20% 80%",
+          start: "-70% 80%",
           // toggleActions: "restart pause resume reverse",
+          // markers: true,
         },
       }
     );

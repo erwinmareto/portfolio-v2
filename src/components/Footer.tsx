@@ -13,12 +13,13 @@ const Footer = () => {
       gsap
         .timeline({
           defaults: {
-            ease: "power1.inOut",
+            ease: "power1.out",
             duration: 0.8,
           },
           scrollTrigger: {
             trigger: "#footer-wave",
-            start: "95% bottom",
+            start: "80% bottom",
+            // markers: true,
           },
         })
         .fromTo("#wave-svg", { y: 200 }, { y: 0, duration: 1 })
@@ -72,16 +73,24 @@ const Footer = () => {
             Socials
           </h2>
           <div className="flex gap-5">
-            <Link href="https://github.com/erwinmareto">
-              <div className="icons flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl">
+            <Link
+              href="https://github.com/erwinmareto"
+              target="_blank"
+              className="icons"
+            >
+              <div className="flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl">
                 <FaGithub />
                 <h2 className="flex gap-5 bg-left-bottom bg-gradient-to-r from-neutral-950 to-neutral-950 bg-[length:0%_4px] bg-no-repeat hover:bg-[length:100%_4px] transition-all duration-500 ease-out ">
                   GitHub
                 </h2>
               </div>
             </Link>
-            <Link href="https://www.linkedin.com/in/erwin-mareto-wikas-a29360233/">
-              <div className="icons flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl">
+            <Link
+              href="https://www.linkedin.com/in/erwin-mareto-wikas/"
+              target="_blank"
+              className="icons"
+            >
+              <div className="flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl">
                 <FaLinkedin />
                 <h2 className="flex gap-5 bg-left-bottom bg-gradient-to-r from-neutral-950 to-neutral-950 bg-[length:0%_4px] bg-no-repeat hover:bg-[length:100%_4px] transition-all duration-500 ease-out ">
                   LinkedIn

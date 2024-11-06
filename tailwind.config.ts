@@ -6,9 +6,31 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    "bg-wihire",
+    "bg-reminderoo",
+    "bg-beaknbite",
+    "bg-attention",
+    "bg-wihireImg",
+    "bg-reminderooImg",
+    "bg-beaknbiteImg",
+    "bg-attentionImg",
+  ],
   theme: {
     fontFamily: {
       sans: ["Urbanist", "sans-serif"],
+    },
+    colors: {
+      wihire: "#1BAE8B",
+      reminderoo: "#4336F3",
+      attention: "#B12220",
+      beaknbite: "#DD7047",
+    },
+    backgroundImage: {
+      reminderooImg: "url('../../public/reminderoo.png')",
+      wihireImg: "url('../../public/wihire.png')",
+      attentionImg: "url('../../public/attention.png')",
+      beaknbiteImg: "url('../../public/beaknbite.png')",
     },
   },
   plugins: [],

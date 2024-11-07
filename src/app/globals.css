@@ -6,6 +6,10 @@ body {
   background-color: #fffbf5;
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 *::selection {
   background-color: #0e0e0e;
   color: #fffbf5;

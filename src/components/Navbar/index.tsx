@@ -46,7 +46,7 @@ const Navbar = () => {
       <div
         ref={items}
         id="items"
-        className={`flex flex-col text-white bg-neutral-950 ${
+        className={`flex flex-col text-light bg-charcoal ${
           showMenu ? "block" : "hidden"
         }`}
       >

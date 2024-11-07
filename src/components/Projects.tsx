@@ -45,7 +45,7 @@ const Projects = () => {
       <div className="flex flex-wrap justify-around items-center gap-5">
         <Link href="https://reminderoo.vercel.app" className="project-img odd">
           <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-[#4336F3]"
+            className="rounded-xl transition-all hover:border-4 hover:border-reminderoo"
             src={"/reminderoo.png"}
             width={500}
             height={500}
@@ -64,7 +64,7 @@ const Projects = () => {
 
         <Link href="https://wihire.vercel.app" className="project-img even">
           <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-sky-300 lg:hidden"
+            className="rounded-xl transition-all hover:border-4 hover:border-wihire lg:hidden"
             src={"/wihire.png"}
             width={500}
             height={500}
@@ -85,7 +85,7 @@ const Projects = () => {
 
         <Link href="https://wihire.vercel.app" className="project-img even">
           <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-sky-300 max-md:hidden"
+            className="rounded-xl transition-all hover:border-4 hover:border-wihire max-md:hidden"
             src={"/wihire.png"}
             width={500}
             height={500}
@@ -95,7 +95,7 @@ const Projects = () => {
 
         <Link href="https://attention.vercel.app" className="project-img odd">
           <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-red-600"
+            className="rounded-xl transition-all hover:border-4 hover:border-attention"
             src={"/attention.png"}
             width={500}
             height={500}
@@ -114,7 +114,7 @@ const Projects = () => {
 
         <Link href="https://beaknbite.vercel.app/" className="project-img even">
           <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-[#DD7047] lg:hidden"
+            className="rounded-xl transition-all hover:border-4 hover:border-beaknbite lg:hidden"
             src={"/beaknbite.png"}
             width={500}
             height={500}
@@ -131,7 +131,7 @@ const Projects = () => {
         </div>
         <Link href="https://beaknbite.vercel.app" className="project-img even">
           <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-[#DD7047] max-md:hidden"
+            className="rounded-xl transition-all hover:border-4 hover:border-beaknbite max-md:hidden"
             src={"/beaknbite.png"}
             width={500}
             height={500}

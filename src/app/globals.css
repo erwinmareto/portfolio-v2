@@ -5,3 +5,14 @@
 body {
   background-color: #fffbf5;
 }
+
+*::selection {
+  background-color: #0e0e0e;
+  color: #fffbf5;
+}
+
+#about *::selection,
+#skills *::selection {
+  background-color: #fffbf5;
+  color: #0e0e0e;
+}

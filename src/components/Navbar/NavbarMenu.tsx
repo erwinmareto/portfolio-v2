@@ -23,11 +23,11 @@ const NavbarMenu = ({ showMenu, setShowMenu }: Props) => {
   return (
     <div
       onClick={() => setShowMenu(!showMenu)}
-      className="flex items-center bg-neutral-950 rounded-full gap-2 px-5 py-2 transition-transform hover:scale-110 hover:bg-neutral-900"
+      className="flex items-center bg-charcoal rounded-full gap-2 px-5 py-2 transition-transform hover:scale-110 hover:bg-neutral-900"
     >
       <svg
         id="burger"
-        className="w-10 h-10 text-white"
+        className="w-10 h-10 text-light"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
@@ -38,7 +38,7 @@ const NavbarMenu = ({ showMenu, setShowMenu }: Props) => {
           clipRule="evenodd"
         />
       </svg>
-      <p className="text-white text-2xl">Menu</p>
+      <p className="text-light text-2xl">Menu</p>
     </div>
   );
 };

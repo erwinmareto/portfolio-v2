@@ -80,7 +80,7 @@ const Footer = () => {
             >
               <div className="flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl">
                 <FaGithub />
-                <h2 className="flex gap-5 bg-left-bottom bg-gradient-to-r from-neutral-950 to-neutral-950 bg-[length:0%_4px] bg-no-repeat hover:bg-[length:100%_4px] transition-all duration-500 ease-out ">
+                <h2 className="flex gap-5 bg-left-bottom bg-gradient-to-r from-charcoal to-charcoal bg-[length:0%_4px] bg-no-repeat hover:bg-[length:100%_4px] transition-all duration-500 ease-out ">
                   GitHub
                 </h2>
               </div>
@@ -92,7 +92,7 @@ const Footer = () => {
             >
               <div className="flex gap-2 text-2xl transition-all md:text-4xl lg:text-6xl">
                 <FaLinkedin />
-                <h2 className="flex gap-5 bg-left-bottom bg-gradient-to-r from-neutral-950 to-neutral-950 bg-[length:0%_4px] bg-no-repeat hover:bg-[length:100%_4px] transition-all duration-500 ease-out ">
+                <h2 className="flex gap-5 bg-left-bottom bg-gradient-to-r from-charcoal to-charcoal bg-[length:0%_4px] bg-no-repeat hover:bg-[length:100%_4px] transition-all duration-500 ease-out ">
                   LinkedIn
                 </h2>
               </div>

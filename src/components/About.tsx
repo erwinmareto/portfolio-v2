@@ -40,7 +40,7 @@ const About = () => {
     <section
       ref={about}
       id="about"
-      className="relative flex flex-col gap-5 bg-neutral-950 text-white px-5 py-28"
+      className="relative flex flex-col gap-5 bg-charcoal text-light px-5 py-28"
     >
       <h1 className="text-8xl z-10 -translate-x-full opacity-0">
         About <br /> Me.

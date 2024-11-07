@@ -20,17 +20,21 @@ const config: Config = {
     fontFamily: {
       sans: ["Urbanist", "sans-serif"],
     },
-    colors: {
-      wihire: "#1BAE8B",
-      reminderoo: "#4336F3",
-      attention: "#B12220",
-      beaknbite: "#DD7047",
-    },
-    backgroundImage: {
-      reminderooImg: "url('../../public/reminderoo.png')",
-      wihireImg: "url('../../public/wihire.png')",
-      attentionImg: "url('../../public/attention.png')",
-      beaknbiteImg: "url('../../public/beaknbite.png')",
+    extend: {
+      colors: {
+        wihire: "#1BAE8B",
+        reminderoo: "#4336F3",
+        attention: "#B12220",
+        beaknbite: "#DD7047",
+        charcoal: "#0E0E0E",
+        light: "#fffbf5",
+      },
+      backgroundImage: {
+        reminderooImg: "url('../../public/reminderoo.png')",
+        wihireImg: "url('../../public/wihire.png')",
+        attentionImg: "url('../../public/attention.png')",
+        beaknbiteImg: "url('../../public/beaknbite.png')",
+      },
     },
   },
   plugins: [],

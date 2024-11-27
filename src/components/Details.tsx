@@ -3,9 +3,11 @@
 import { bgMapping } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
+import { BiArrowBack } from "react-icons/bi";
 
 const Details = () => {
+  const router = useRouter();
   const params = useParams();
 
   return (
@@ -17,6 +19,12 @@ const Details = () => {
       )}
     >
       <article className="flex flex-col items-start gap-4">
+        <button
+          className="p-2 rounded-lg transition-colors hover:bg-slate-100/25"
+          onClick={() => router.back()}
+        >
+          <BiArrowBack className="text-3xl" />
+        </button>
         <Image
           src={`/${params.projectName}.png`}
           width={550}

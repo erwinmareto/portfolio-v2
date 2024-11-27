@@ -7,6 +7,7 @@ import { useParams } from "next/navigation";
 
 const Details = () => {
   const params = useParams();
+
   return (
     <section
       className={cn(

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -43,7 +43,7 @@ const Projects = () => {
     >
       <h1 className="text-6xl md:text-8xl text-right">Projects.</h1>
       <div className="flex flex-wrap justify-around items-center gap-5">
-        <Link href="https://reminderoo.vercel.app" className="project-img odd">
+        <Link href="/projects/reminderoo" className="project-img odd">
           <Image
             className="rounded-xl transition-all hover:border-4 hover:border-reminderoo"
             src={"/reminderoo.png"}
@@ -62,7 +62,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <Link href="https://wihire.vercel.app" className="project-img even">
+        <Link href="/projects/wihire" className="project-img even">
           <Image
             className="rounded-xl transition-all hover:border-4 hover:border-wihire lg:hidden"
             src={"/wihire.png"}
@@ -83,7 +83,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <Link href="https://wihire.vercel.app" className="project-img even">
+        <Link href="/projects/wihire" className="project-img even">
           <Image
             className="rounded-xl transition-all hover:border-4 hover:border-wihire max-md:hidden"
             src={"/wihire.png"}
@@ -93,7 +93,7 @@ const Projects = () => {
           />
         </Link>
 
-        <Link href="https://attention.vercel.app" className="project-img odd">
+        <Link href="/projects/attention" className="project-img odd">
           <Image
             className="rounded-xl transition-all hover:border-4 hover:border-attention"
             src={"/attention.png"}
@@ -112,7 +112,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <Link href="https://beaknbite.vercel.app/" className="project-img even">
+        <Link href="/projects/beaknbite" className="project-img even">
           <Image
             className="rounded-xl transition-all hover:border-4 hover:border-beaknbite lg:hidden"
             src={"/beaknbite.png"}
@@ -129,7 +129,7 @@ const Projects = () => {
             that showcases the company profile and their bussiness model.
           </p>
         </div>
-        <Link href="https://beaknbite.vercel.app" className="project-img even">
+        <Link href="/projects/beaknbite" className="project-img even">
           <Image
             className="rounded-xl transition-all hover:border-4 hover:border-beaknbite max-md:hidden"
             src={"/beaknbite.png"}

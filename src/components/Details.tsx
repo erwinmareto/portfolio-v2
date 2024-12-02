@@ -13,7 +13,7 @@ const Details = () => {
   return (
     <section
       className={cn(
-        "min-h-screen flex flex-col gap-16 px-5 pt-16 md:px-24 md:py-16 lg:flex-row",
+        "min-h-screen flex flex-col gap-16 px-5 pt-16 md:px-24 md:py-16 lg:flex-row project-img demo",
         `backdrop-blur-lg bg-opacity-55`,
         bgMapping[params.projectName as string]
       )}

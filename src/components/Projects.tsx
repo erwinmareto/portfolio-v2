@@ -2,12 +2,14 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { Link } from "next-view-transitions";
+import { Link, useTransitionRouter } from "next-view-transitions";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const Projects = () => {
   const projects = useRef(null);
+  const router = useTransitionRouter();
+
   useGSAP(
     () => {
       // const projects = gsap.utils.toArray(".project-desc");
@@ -25,7 +27,7 @@ const Projects = () => {
       });
 
       tl.fromTo("h1", { x: 100, opacity: 0 }, { x: 0, opacity: 1 })
-        // .fromTo(".project-img", { x: -100, opacity: 0 }, { x: 0, opacity: 1 })
+        // .fromTo(".", { x: -100, opacity: 0 }, { x: 0, opacity: 1 })
         // .add([
         //   gsap.fromTo(".odd", { x: 100, opacity: 0 }, { x: 0, opacity: 1 }),
         //   gsap.fromTo(".even", { x: -100, opacity: 0 }, { x: 0, opacity: 1 }),
@@ -43,9 +45,9 @@ const Projects = () => {
     >
       <h1 className="text-6xl md:text-8xl text-right">Projects.</h1>
       <div className="flex flex-wrap justify-around items-center gap-5">
-        <Link href="/projects/reminderoo" className="project-img odd">
+        <Link href="/projects/reminderoo" className=" odd">
           <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-reminderoo"
+            className="project-img rounded-xl transition-all hover:border-4 hover:border-reminderoo demo"
             src={"/reminderoo.png"}
             width={500}
             height={500}
@@ -62,9 +64,9 @@ const Projects = () => {
           </p>
         </div>
 
-        <Link href="/projects/wihire" className="project-img even">
+        <Link href="/projects/wihire" className=" even">
           <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-wihire lg:hidden"
+            className="project-img rounded-xl transition-all hover:border-4 hover:border-wihire lg:hidden focus:demo"
             src={"/wihire.png"}
             width={500}
             height={500}
@@ -83,9 +85,9 @@ const Projects = () => {
           </p>
         </div>
 
-        <Link href="/projects/wihire" className="project-img even">
+        <Link href="/projects/wihire" className=" even">
           <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-wihire max-md:hidden"
+            className="project-img rounded-xl transition-all hover:border-4 hover:border-wihire max-md:hidden"
             src={"/wihire.png"}
             width={500}
             height={500}
@@ -93,9 +95,9 @@ const Projects = () => {
           />
         </Link>
 
-        <Link href="/projects/attention" className="project-img odd">
+        <Link href="/projects/attention" className=" odd">
           <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-attention"
+            className="project-img rounded-xl transition-all hover:border-4 hover:border-attention"
             src={"/attention.png"}
             width={500}
             height={500}
@@ -112,9 +114,9 @@ const Projects = () => {
           </p>
         </div>
 
-        <Link href="/projects/beaknbite" className="project-img even">
+        <Link href="/projects/beaknbite" className=" even">
           <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-beaknbite lg:hidden"
+            className="project-img rounded-xl transition-all hover:border-4 hover:border-beaknbite lg:hidden"
             src={"/beaknbite.png"}
             width={500}
             height={500}
@@ -129,9 +131,9 @@ const Projects = () => {
             that showcases the company profile and their bussiness model.
           </p>
         </div>
-        <Link href="/projects/beaknbite" className="project-img even">
+        <Link href="/projects/beaknbite" className=" even">
           <Image
-            className="rounded-xl transition-all hover:border-4 hover:border-beaknbite max-md:hidden"
+            className="project-img rounded-xl transition-all hover:border-4 hover:border-beaknbite max-md:hidden"
             src={"/beaknbite.png"}
             width={500}
             height={500}

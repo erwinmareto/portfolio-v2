@@ -49,6 +49,7 @@ const Contacts = () => {
             <Link
               className="text-2xl bg-left-bottom bg-gradient-to-r from-[#81A6D3] to-[#5B8DCB] bg-[length:100%_4px] bg-no-repeat hover:bg-[length:0%_4px] transition-all duration-500 ease-out md:text-4xl lg:text-6xl"
               href="mailto:erwinmaretow@gmail.com"
+              target="_blank"
             >
               erwinmaretow@gmail.com
             </Link>
@@ -56,7 +57,8 @@ const Contacts = () => {
           <h2 id="resume" className="md:text-right">
             <Link
               className="text-2xl bg-left-bottom bg-gradient-to-r from-[#81A6D3] to-[#5B8DCB] bg-[length:0%_4px] bg-no-repeat hover:bg-[length:100%_4px] transition-all duration-500 ease-out md:text-4xl lg:text-6xl"
-              href="mailto:erwinmaretow@gmail.com"
+              href="https://drive.google.com/file/d/13y3EB4cs8jI86vaJEz-v5TF_HTkFtzZg/view?usp=sharing"
+              target="_blank"
             >
               Resume
             </Link>
